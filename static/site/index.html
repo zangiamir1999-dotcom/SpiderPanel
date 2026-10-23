@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cleargrin Dental Clinic — Healthy Smiles, Happier Lives</title>
-<meta name="description" content="Cleargrin Dental Clinic: general dentistry, orthodontics, implants, cosmetic, pediatric and emergency care. Book your appointment online.">
+<title>کلینیک دندان‌پزشکی کلیرگرین — لبخند سالم، زندگی شادتر</title>
+<meta name="description" content="کلینیک دندان‌پزشکی کلیرگرین: دندان‌پزشکی عمومی، ارتودنسی، ایمپلنت، زیبایی، کودکان و اورژانس. نوبت خود را آنلاین رزرو کنید.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/styles.css">
 <script type="importmap">
 {
@@ -19,11 +19,11 @@
 </script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">پرش به محتوای اصلی</a>
 
 <header class="site-header" id="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="#home">
+    <a class="brand" href="#home" aria-label="خانهٔ کلینیک دندان‌پزشکی کلیرگرین">
       <span class="brand__mark" aria-hidden="true">
         <svg viewBox="0 0 32 32" fill="none">
           <path d="M3.5 12.5c4.5-4.6 9.6-6.9 15.2-6.9 4 0 7.6 1.2 10 3.4" stroke="#2f8f72" stroke-width="3.2" stroke-linecap="round"/>
@@ -32,29 +32,29 @@
         </svg>
       </span>
       <span class="brand__text">
-        <strong>Cleargrin</strong>
-        <span>Dental Clinic</span>
+        <strong>کلیرگرین</strong>
+        <span>کلینیک دندان‌پزشکی</span>
       </span>
     </a>
 
-    <nav class="nav" id="primary-nav" aria-label="Main navigation">
+    <nav class="nav" id="primary-nav" aria-label="منوی اصلی">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#patient-info">Patient Info</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home">خانه</a></li>
+        <li><a href="#services">خدمات</a></li>
+        <li><a href="#about">دربارهٔ ما</a></li>
+        <li><a href="#patient-info">اطلاعات بیمار</a></li>
+        <li><a href="#contact">تماس</a></li>
       </ul>
     </nav>
 
     <div class="site-header__actions">
-      <button class="icon-btn" id="search-toggle" type="button" aria-expanded="false" aria-controls="service-search" aria-label="Search services">
+      <button class="icon-btn" id="search-toggle" type="button" aria-expanded="false" aria-controls="service-search" aria-label="جست‌وجوی خدمات">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
           <circle cx="11" cy="11" r="6.2"/><path d="M15.6 15.6 20 20"/>
         </svg>
       </button>
-      <a class="btn btn--primary btn--sm" href="#booking">Book Appointment</a>
-      <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+      <a class="btn btn--primary btn--sm" href="#booking">رزرو نوبت</a>
+      <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="باز کردن منو">
         <svg class="nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
           <path d="M4 7h16M4 12h16M4 17h16"/>
         </svg>
@@ -70,178 +70,178 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
         <circle cx="11" cy="11" r="6.2"/><path d="M15.6 15.6 20 20"/>
       </svg>
-      <input type="search" id="service-search-input" placeholder="Search a treatment, e.g. implants" aria-label="Search services">
-      <button type="button" class="service-search__clear" id="service-search-clear">Clear</button>
+      <input type="search" id="service-search-input" placeholder="جست‌وجوی خدمات، مثلاً ایمپلنت" aria-label="جست‌وجوی خدمات">
+      <button type="button" class="service-search__clear" id="service-search-clear">پاک کردن</button>
     </form>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <!-- ── هیرو ─────────────────────────────────────────────── -->
   <section class="hero" id="home">
     <div class="wrap hero__inner">
       <div class="hero__copy">
-        <h1>Healthy Smiles<br>Happier Lives</h1>
-        <p class="eyebrow">Caring today for brighter tomorrows</p>
-        <p class="lead">Gentle, modern dentistry for the whole family — from routine check-ups to complete smile makeovers, in a calm and welcoming clinic.</p>
+        <h1>لبخند سالم،<br>زندگی شادتر</h1>
+        <p class="eyebrow">امروز مراقبت، برای فرداهای روشن‌تر</p>
+        <p class="lead">دندان‌پزشکی مدرن و مهربان برای همهٔ خانواده — از معاینهٔ دوره‌ای تا طراحی کامل لبخند، در فضایی آرام و صمیمی.</p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#booking">Book Appointment</a>
+          <a class="btn btn--primary" href="#booking">رزرو نوبت</a>
           <button class="btn btn--ghost" id="stage-expand" type="button">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15"/>
             </svg>
-            Explore in 3D
+            نمایش سه‌بعدی
           </button>
         </div>
         <ul class="hero__chips">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.4c-1.8 0-2.4 1-4 1-1.4 0-2.3-.6-2.8 1.1-.5 1.9.3 3.9.9 5.6.5 1.4.8 3.8 1.3 5.2.3.9 1.4 1 1.8-.2l1-3c.2-.7 1.1-.7 1.3 0l1 3c.4 1.2 1.5 1.1 1.8.2.5-1.4.8-3.8 1.3-5.2.6-1.7 1.4-3.7.9-5.6-.5-1.7-1.4-1.1-2.8-1.1-1.6 0-2.2-1-4-1Z"/></svg>
-            Trusted Care
+            مراقبت مطمئن
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8.6" r="3.1"/><circle cx="17" cy="9.6" r="2.3"/><path d="M3.4 19c.5-2.7 2.8-4.3 5.6-4.3s5.1 1.6 5.6 4.3M15.4 14.9c2.2.2 4 1.6 4.4 3.8"/></svg>
-            All Ages Welcome
+            برای همهٔ سنین
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6l1.7 4.6 4.7 1.5-4.7 1.5L12 15.8l-1.7-4.6L5.6 9.7l4.7-1.5L12 3.6Z"/><path d="M18.6 15.4l.8 2.2 2.1.8-2.1.8-.8 2.2-.8-2.2-2.1-.8 2.1-.8.8-2.2Z"/></svg>
-            Modern Technology
+            تجهیزات مدرن
           </li>
         </ul>
       </div>
 
       <div class="stage" id="stage">
         <div class="stage__inner">
-          <canvas id="tooth-canvas" role="img" aria-label="Interactive 3D model of healthy teeth"></canvas>
+          <canvas id="tooth-canvas" role="img" aria-label="مدل سه‌بعدی تعاملی از دندان‌های سالم"></canvas>
           <div class="stage__fallback" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.4c-1.8 0-2.4 1-4 1-1.4 0-2.3-.6-2.8 1.1-.5 1.9.3 3.9.9 5.6.5 1.4.8 3.8 1.3 5.2.3.9 1.4 1 1.8-.2l1-3c.2-.7 1.1-.7 1.3 0l1 3c.4 1.2 1.5 1.1 1.8.2.5-1.4.8-3.8 1.3-5.2.6-1.7 1.4-3.7.9-5.6-.5-1.7-1.4-1.1-2.8-1.1-1.6 0-2.2-1-4-1Z"/></svg>
           </div>
-          <span class="stage__hint">Drag to rotate</span>
-          <button class="stage__close" id="stage-close" type="button" aria-label="Close the 3D view">
+          <span class="stage__hint">برای چرخاندن بکشید</span>
+          <button class="stage__close" id="stage-close" type="button" aria-label="بستن نمای سه‌بعدی">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
           </button>
         </div>
       </div>
 
       <div class="booking" id="booking">
-        <h2 class="booking__title">Book Your Appointment</h2>
+        <h2 class="booking__title">رزرو نوبت شما</h2>
         <form class="booking__form" id="booking-form" novalidate>
           <label class="field">
-            <span>Full Name</span>
-            <input type="text" name="name" id="booking-name" autocomplete="name" placeholder="Your name" required>
+            <span>نام و نام خانوادگی</span>
+            <input type="text" name="name" id="booking-name" autocomplete="name" placeholder="نام شما" required>
           </label>
           <label class="field">
-            <span>Phone Number</span>
-            <input type="tel" name="phone" id="booking-phone" autocomplete="tel" placeholder="+00 000 000 000" required>
+            <span>شمارهٔ تماس</span>
+            <input type="tel" name="phone" id="booking-phone" autocomplete="tel" placeholder="۰۹۱۲ ۳۴۵ ۶۷۸۹" required>
           </label>
           <label class="field">
-            <span>Select Date</span>
+            <span>تاریخ مراجعه</span>
             <input type="date" name="date" id="booking-date">
           </label>
           <label class="field">
-            <span>Select Service</span>
+            <span>نوع خدمت</span>
             <select name="service" id="booking-service">
-              <option value="General Dentistry">General Dentistry</option>
-              <option value="Orthodontics">Orthodontics</option>
-              <option value="Dental Implants">Dental Implants</option>
-              <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
-              <option value="Pediatric Dentistry">Pediatric Dentistry</option>
-              <option value="Emergency Care">Emergency Care</option>
+              <option value="دندان‌پزشکی عمومی">دندان‌پزشکی عمومی</option>
+              <option value="ارتودنسی">ارتودنسی</option>
+              <option value="ایمپلنت دندان">ایمپلنت دندان</option>
+              <option value="دندان‌پزشکی زیبایی">دندان‌پزشکی زیبایی</option>
+              <option value="دندان‌پزشکی کودکان">دندان‌پزشکی کودکان</option>
+              <option value="اورژانس دندان‌پزشکی">اورژانس دندان‌پزشکی</option>
             </select>
           </label>
-          <button class="btn btn--primary btn--block" type="submit">Book Now</button>
+          <button class="btn btn--primary btn--block" type="submit">ثبت درخواست</button>
           <p class="booking__note" id="booking-note" role="status"></p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ── Services ─────────────────────────────────────────── -->
+  <!-- ── خدمات ────────────────────────────────────────────── -->
   <section class="section services" id="services">
     <div class="wrap">
       <div class="section__head">
         <div>
-          <p class="eyebrow">Our Services</p>
-          <h2>Comprehensive care<br>for every smile</h2>
+          <p class="eyebrow">خدمات ما</p>
+          <h2>مراقبت جامع<br>برای هر لبخند</h2>
         </div>
-        <a class="link-arrow" href="#booking">View All Services
+        <a class="link-arrow" href="#booking">مشاهدهٔ همهٔ خدمات
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg>
         </a>
       </div>
 
       <ul class="cards" id="service-cards">
-        <li class="card" data-service="General Dentistry Cleanings, exams and preventive care">
+        <li class="card" data-service="دندان‌پزشکی عمومی جرم‌گیری، معاینه و مراقبت پیشگیرانه">
           <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.4c-1.8 0-2.4 1-4 1-1.4 0-2.3-.6-2.8 1.1-.5 1.9.3 3.9.9 5.6.5 1.4.8 3.8 1.3 5.2.3.9 1.4 1 1.8-.2l1-3c.2-.7 1.1-.7 1.3 0l1 3c.4 1.2 1.5 1.1 1.8.2.5-1.4.8-3.8 1.3-5.2.6-1.7 1.4-3.7.9-5.6-.5-1.7-1.4-1.1-2.8-1.1-1.6 0-2.2-1-4-1Z"/></svg></span>
-          <h3>General Dentistry</h3>
-          <p>Cleanings, exams &amp; preventive care</p>
+          <h3>دندان‌پزشکی عمومی</h3>
+          <p>جرم‌گیری، معاینه و مراقبت پیشگیرانه</p>
         </li>
-        <li class="card" data-service="Orthodontics Straighter smiles for brighter futures">
+        <li class="card" data-service="ارتودنسی لبخند مرتب برای آینده‌ای روشن‌تر">
           <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.2 9.6c3.6-2.3 12-2.3 15.6 0"/><path d="M4.6 15.2c3.4 2.1 11.4 2.1 14.8 0"/><rect x="7.4" y="10.9" width="3" height="2.6" rx="0.7"/><rect x="13.6" y="10.9" width="3" height="2.6" rx="0.7"/><path d="M10.4 12.2h3.2"/></svg></span>
-          <h3>Orthodontics</h3>
-          <p>Straighter smiles for brighter futures</p>
+          <h3>ارتودنسی</h3>
+          <p>لبخند مرتب برای آینده‌ای روشن‌تر</p>
         </li>
-        <li class="card" data-service="Dental Implants A lasting solution for missing teeth">
+        <li class="card" data-service="ایمپلنت دندان راه‌حلی ماندگار برای دندان‌های از‌دست‌رفته">
           <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.6 3.4h6.8l-1 3.4H9.6l-1-3.4Z"/><path d="M12 6.8V20"/><path d="M9.4 10h5.2M9.7 13.2h4.6M10.3 16.4h3.4"/></svg></span>
-          <h3>Dental Implants</h3>
-          <p>A lasting solution for missing teeth</p>
+          <h3>ایمپلنت دندان</h3>
+          <p>راه‌حلی ماندگار برای دندان‌های از‌دست‌رفته</p>
         </li>
-        <li class="card" data-service="Cosmetic Dentistry Smile with confidence">
+        <li class="card" data-service="دندان‌پزشکی زیبایی با اعتماد به نفس لبخند بزنید">
           <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3.2l1.6 4.5 4.6 1.5-4.6 1.5L11 15.2 9.4 10.7 4.8 9.2l4.6-1.5L11 3.2Z"/><path d="M18.2 15.4l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2Z"/></svg></span>
-          <h3>Cosmetic Dentistry</h3>
-          <p>Smile with confidence</p>
+          <h3>دندان‌پزشکی زیبایی</h3>
+          <p>با اعتماد به نفس لبخند بزنید</p>
         </li>
-        <li class="card" data-service="Pediatric Dentistry Gentle care for growing smiles">
+        <li class="card" data-service="دندان‌پزشکی کودکان مراقبت مهربان برای لبخندهای در حال رشد">
           <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13.4" r="6.6"/><path d="M12 6.8V5.1"/><path d="M9.9 12.2v.2M14.1 12.2v.2"/><path d="M9.7 15.6c1.4 1.2 3.2 1.2 4.6 0"/></svg></span>
-          <h3>Pediatric Dentistry</h3>
-          <p>Gentle care for growing smiles</p>
+          <h3>دندان‌پزشکی کودکان</h3>
+          <p>مراقبت مهربان برای لبخندهای در حال رشد</p>
         </li>
-        <li class="card" data-service="Emergency Care Here when you need us most">
+        <li class="card" data-service="اورژانس دندان‌پزشکی هر وقت نیاز داشتید کنار شما هستیم">
           <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.6" y="3.6" width="16.8" height="16.8" rx="4.2"/><path d="M12 8.2v7.6M8.2 12h7.6"/></svg></span>
-          <h3>Emergency Care</h3>
-          <p>Here when you need us most</p>
+          <h3>اورژانس دندان‌پزشکی</h3>
+          <p>هر وقت نیاز داشتید، کنار شما هستیم</p>
         </li>
       </ul>
-      <p class="cards__empty" id="services-empty" hidden>No treatment matches that search. <button type="button" class="link-inline" id="services-reset">Show all services</button></p>
+      <p class="cards__empty" id="services-empty" hidden>خدمتی با این عبارت پیدا نشد. <button type="button" class="link-inline" id="services-reset">نمایش همهٔ خدمات</button></p>
     </div>
   </section>
 
-  <!-- ── Patient info ─────────────────────────────────────── -->
+  <!-- ── اطلاعات بیمار ────────────────────────────────────── -->
   <section class="section patient" id="patient-info">
     <div class="wrap">
       <div class="section__head section__head--center">
         <div>
-          <p class="eyebrow">Patient Info</p>
-          <h2>What to know before your visit</h2>
+          <p class="eyebrow">اطلاعات بیمار</p>
+          <h2>پیش از مراجعه چه بدانید</h2>
         </div>
       </div>
       <ul class="info-grid">
         <li class="info-card">
           <span class="info-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.6V12l3 1.9"/></svg></span>
-          <h3>Opening Hours</h3>
-          <p>Weekday mornings and evenings, plus a half day at the weekend. Exact times are confirmed when your appointment is booked.</p>
+          <h3>ساعات کاری</h3>
+          <p>روزهای هفته صبح‌ها و عصرها، و نیمی از روز در آخر هفته. ساعت دقیق هنگام ثبت نوبت به شما اعلام می‌شود.</p>
         </li>
         <li class="info-card">
           <span class="info-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="5.4" width="18.4" height="13.2" rx="2.6"/><path d="M2.8 10h18.4M6.6 14.6h3.2"/></svg></span>
-          <h3>Insurance &amp; Payment</h3>
-          <p>Most common dental plans are accepted, and treatment costs are explained in full before any work begins.</p>
+          <h3>بیمه و پرداخت</h3>
+          <p>بیشتر بیمه‌های رایج دندان‌پزشکی پذیرفته می‌شود و هزینهٔ درمان پیش از شروع کار کامل توضیح داده می‌شود.</p>
         </li>
         <li class="info-card">
           <span class="info-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4.4h6.2l3.8 3.8v11.4H8a2 2 0 0 1-2-2V6.4a2 2 0 0 1 2-2Z"/><path d="M9.4 13.6l1.8 1.8 3.4-3.6"/></svg></span>
-          <h3>First Visit</h3>
-          <p>Your first appointment starts with a full check-up and a friendly plan, with no pressure to decide on the spot.</p>
+          <h3>اولین مراجعه</h3>
+          <p>اولین نوبت با یک معاینهٔ کامل و برنامهٔ درمانی شفاف شروع می‌شود، بدون هیچ اصراری برای تصمیم فوری.</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- ── About + testimonial ──────────────────────────────── -->
+  <!-- ── دربارهٔ ما + نظر مراجعان ─────────────────────────── -->
   <section class="section about" id="about">
     <div class="wrap about__inner">
       <div class="about__copy">
-        <p class="eyebrow">A calmer dental experience</p>
-        <h2>Modern Care.<br>A Kinder Approach.</h2>
-        <p>From the moment you walk in, our team works at your pace — explaining every step, keeping treatment comfortable, and using modern equipment that makes visits quicker and gentler.</p>
-        <a class="btn btn--outline" href="#services">Learn More</a>
+        <p class="eyebrow">یک تجربهٔ آرام‌تر از دندان‌پزشکی</p>
+        <h2>مراقبت مدرن،<br>رفتاری مهربان‌تر</h2>
+        <p>از لحظهٔ ورود، تیم ما با سرعت شما پیش می‌رود — هر مرحله را توضیح می‌دهد، درمان را راحت نگه می‌دارد و با تجهیزات مدرن، مراجعه را سریع‌تر و ملایم‌تر می‌کند.</p>
+        <a class="btn btn--outline" href="#services">بیشتر بدانید</a>
       </div>
 
       <div class="about__visual" aria-hidden="true">
@@ -259,13 +259,13 @@
 
       <figure class="testimonial" id="testimonial">
         <svg class="testimonial__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.4 5.2C6 6.9 4 9.9 4 13.4c0 3.2 1.9 5.4 4.5 5.4 2.2 0 3.9-1.6 3.9-3.8 0-2.1-1.5-3.6-3.5-3.6-.4 0-.8 0-1.1.2.3-1.6 1.6-3.1 3.4-4.1l-1.8-2.3Zm9 0c-3.4 1.7-5.4 4.7-5.4 8.2 0 3.2 1.9 5.4 4.5 5.4 2.2 0 3.9-1.6 3.9-3.8 0-2.1-1.5-3.6-3.5-3.6-.4 0-.8 0-1.1.2.3-1.6 1.6-3.1 3.4-4.1l-1.8-2.3Z"/></svg>
-        <blockquote id="testimonial-quote">The team at Cleargrin made my visit so easy and comfortable. Highly recommend!</blockquote>
-        <figcaption id="testimonial-author">Jessica R.</figcaption>
+        <blockquote id="testimonial-quote">تیم کلینیک مراجعهٔ من را خیلی ساده و راحت کرد. حتماً پیشنهاد می‌کنم!</blockquote>
+        <figcaption id="testimonial-author">سارا رضایی</figcaption>
         <div class="testimonial__nav">
-          <button class="icon-btn icon-btn--round" type="button" id="testimonial-prev" aria-label="Previous testimonial">
+          <button class="icon-btn icon-btn--round" type="button" id="testimonial-prev" aria-label="نظر قبلی">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H6M11 6.5 5.5 12 11 17.5"/></svg>
           </button>
-          <button class="icon-btn icon-btn--round" type="button" id="testimonial-next" aria-label="Next testimonial">
+          <button class="icon-btn icon-btn--round" type="button" id="testimonial-next" aria-label="نظر بعدی">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg>
           </button>
         </div>
@@ -273,35 +273,35 @@
     </div>
   </section>
 
-  <!-- ── Stats ────────────────────────────────────────────── -->
+  <!-- ── آمار ─────────────────────────────────────────────── -->
   <section class="stats">
     <div class="wrap stats__grid">
       <div class="stat">
         <span class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.6" r="3.1"/><circle cx="17" cy="9.6" r="2.3"/><path d="M3.4 19c.5-2.7 2.8-4.3 5.6-4.3s5.1 1.6 5.6 4.3M15.4 14.9c2.2.2 4 1.6 4.4 3.8"/></svg></span>
-        <strong>5,000+</strong>
-        <span>Happy Patients</span>
+        <strong>بیش از ۵٬۰۰۰</strong>
+        <span>بیمار راضی</span>
       </div>
       <div class="stat">
         <span class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.6-4.8 2.6.9-5.4-3.9-3.8 5.4-.8L12 4.2Z"/></svg></span>
-        <strong>4.9/5</strong>
-        <span>Average Rating</span>
+        <strong>۴.۹ از ۵</strong>
+        <span>میانگین رضایت</span>
       </div>
       <div class="stat">
         <span class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l7 3v5.2c0 4-2.9 7.4-7 8.6-4.1-1.2-7-4.6-7-8.6V6.6l7-3Z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg></span>
-        <strong>10+</strong>
-        <span>Years Of Trusted Care</span>
+        <strong>بیش از ۱۰ سال</strong>
+        <span>تجربهٔ مطمئن</span>
       </div>
       <div class="stat">
         <span class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.2l1.6 4.4 4.6 1.5-4.6 1.5L11 16 9.4 11.6 4.8 10.1l4.6-1.5L11 4.2Z"/><path d="M18.2 15.4l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2Z"/></svg></span>
-        <strong>Healthy Smiles</strong>
-        <span>Brighter Futures</span>
+        <strong>لبخند سالم</strong>
+        <span>آیندهٔ روشن</span>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- ── Footer ───────────────────────────────────────────────── -->
+<!-- ── فوتر ─────────────────────────────────────────────────── -->
 <footer class="site-footer" id="contact">
   <div class="wrap site-footer__inner">
     <div class="site-footer__brand">
@@ -314,33 +314,33 @@
           </svg>
         </span>
         <span class="brand__text">
-          <strong>Cleargrin</strong>
-          <span>Dental Clinic</span>
+          <strong>کلیرگرین</strong>
+          <span>کلینیک دندان‌پزشکی</span>
         </span>
       </a>
-      <nav class="site-footer__nav" aria-label="Footer">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#patient-info">Patient Info</a>
-        <a href="#contact">Contact</a>
+      <nav class="site-footer__nav" aria-label="پیوندهای پانوشت">
+        <a href="#home">خانه</a>
+        <a href="#services">خدمات</a>
+        <a href="#about">دربارهٔ ما</a>
+        <a href="#patient-info">اطلاعات بیمار</a>
+        <a href="#contact">تماس</a>
       </nav>
-      <p class="site-footer__note">Questions about a treatment? Send a request through the appointment form and our reception will get back to you.</p>
+      <p class="site-footer__note">دربارهٔ یک درمان سؤالی دارید؟ درخواست خود را از فرم رزرو نوبت بفرستید تا پذیرش با شما تماس بگیرد.</p>
     </div>
 
     <div class="site-footer__side">
       <ul class="socials">
-        <li><a href="#contact" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
-        <li><a href="#contact" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.8 20.4v-7.2h2.6l.5-3.1h-3.1V8.2c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.8-.1-1.6-.2-2.4-.2-2.4 0-4 1.5-4 4.2v2.2H9v3.1h2.6v7.2h3.2Z"/></svg></a></li>
-        <li><a href="#contact" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="4.6"/><path d="M7.8 10.4v6.2M7.8 7.4v.1M11.8 16.6v-3.4c0-1.3.8-2.2 2-2.2s1.9.9 1.9 2.2v3.4"/></svg></a></li>
-        <li><a href="#contact" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="5.6" width="18.8" height="12.8" rx="4"/><path d="M10.6 9.6 15 12l-4.4 2.4V9.6Z"/></svg></a></li>
+        <li><a href="#contact" aria-label="اینستاگرام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
+        <li><a href="#contact" aria-label="فیسبوک"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.8 20.4v-7.2h2.6l.5-3.1h-3.1V8.2c0-.9.3-1.5 1.6-1.5h1.6V3.9c-.8-.1-1.6-.2-2.4-.2-2.4 0-4 1.5-4 4.2v2.2H9v3.1h2.6v7.2h3.2Z"/></svg></a></li>
+        <li><a href="#contact" aria-label="لینکدین"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="4.6"/><path d="M7.8 10.4v6.2M7.8 7.4v.1M11.8 16.6v-3.4c0-1.3.8-2.2 2-2.2s1.9.9 1.9 2.2v3.4"/></svg></a></li>
+        <li><a href="#contact" aria-label="یوتیوب"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="5.6" width="18.8" height="12.8" rx="4"/><path d="M10.6 9.6 15 12l-4.4 2.4V9.6Z"/></svg></a></li>
       </ul>
-      <p class="site-footer__tagline">A healthier tomorrow<br>starts with a smile.</p>
+      <p class="site-footer__tagline">فردای سالم‌تر<br>با یک لبخند شروع می‌شود</p>
     </div>
   </div>
   <div class="wrap site-footer__base">
-    <span>&copy; <span id="footer-year">2026</span> Cleargrin Dental Clinic</span>
-    <span>Template content — replace with your clinic's real details.</span>
+    <span>&copy; <span id="footer-year">۱۴۰۴</span> کلینیک دندان‌پزشکی کلیرگرین</span>
+    <span>محتوای نمونه — با اطلاعات واقعی کلینیک خود جایگزین کنید.</span>
   </div>
 </footer>
 

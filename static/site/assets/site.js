@@ -39,11 +39,11 @@
   let hasScrolledToServices = false;
 
   const applyFilter = () => {
-    const query = searchInput.value.trim().toLowerCase();
+    const query = searchInput.value.trim();
     let shown = 0;
 
     cards.forEach((card) => {
-      const match = !query || card.dataset.service.toLowerCase().includes(query);
+      const match = !query || card.dataset.service.includes(query);
       card.hidden = !match;
       if (match) shown += 1;
     });
@@ -93,20 +93,24 @@
     event.preventDefault();
 
     const name = $('booking-name').value.trim();
-    const phone = $('booking-phone').value.replace(/\D/g, '');
+    // A Persian keyboard types Persian digits (۰-۹), so fold those to 0-9 first.
+    const phone = $('booking-phone').value
+      .replace(/[\u06F0-\u06F9]/g, (digit) => String(digit.charCodeAt(0) - 0x06f0))
+      .replace(/[\u0660-\u0669]/g, (digit) => String(digit.charCodeAt(0) - 0x0660))
+      .replace(/\D/g, '');
     const date = $('booking-date').value;
     const service = $('booking-service').value;
 
     if (!name || phone.length < 6) {
       bookingNote.classList.add('is-error');
-      bookingNote.textContent = 'Please add your name and a phone number we can reach you on.';
+      bookingNote.textContent = 'لطفاً نام و یک شمارهٔ تماس معتبر وارد کنید.';
       return;
     }
 
     bookingNote.classList.remove('is-error');
     bookingNote.textContent =
-      'Thanks, ' + name + '! We have your ' + service.toLowerCase() + ' request' +
-      (date ? ' for ' + date : '') + ' — reception will call you to confirm.';
+      'ممنون، ' + name + '! درخواست «' + service + '» شما' +
+      (date ? ' برای ' + date : '') + ' ثبت شد — پذیرش برای تأیید نوبت با شما تماس می‌گیرد.';
     bookingForm.reset();
   });
 
@@ -115,9 +119,9 @@
   const quoteText = $('testimonial-quote');
   const quoteAuthor = $('testimonial-author');
   const quotes = [
-    { text: 'The team at Cleargrin made my visit so easy and comfortable. Highly recommend!', author: 'Jessica R.' },
-    { text: 'Every step was explained before it happened, and the appointment itself was completely painless.', author: 'Daniel M.' },
-    { text: 'My children were nervous and the team was endlessly patient with them. A wonderful clinic.', author: 'Sara A.' },
+    { text: 'تیم کلینیک مراجعهٔ من را خیلی ساده و راحت کرد. حتماً پیشنهاد می‌کنم!', author: 'سارا رضایی' },
+    { text: 'هر مرحله پیش از انجام کامل توضیح داده شد و خودِ درمان هم بدون هیچ دردی بود.', author: 'دانیال مرادی' },
+    { text: 'بچه‌هایم مضطرب بودند و تیم با حوصلهٔ تمام با آن‌ها رفتار کرد. کلینیک فوق‌العاده‌ای است.', author: 'مینا احمدی' },
   ];
   let quoteIndex = 0;
 
@@ -158,5 +162,5 @@
   }, 6000);
 
   // ── Footer year ────────────────────────────────────────────
-  $('footer-year').textContent = String(new Date().getFullYear());
+  $('footer-year').textContent = '۱۴۰۴';
 })();

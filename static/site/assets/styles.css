@@ -694,3 +694,45 @@ button { font: inherit; color: inherit; }
   html { scroll-behavior: auto; }
   .card:hover, .btn:hover { transform: none; }
 }
+
+/* ── Persian / RTL ─────────────────────────────────────────
+   The page ships in Persian (dir="rtl" on <html>), so everything below
+   only flips the direction-sensitive parts of the LTR base styles. */
+
+[dir="rtl"] body {
+  font-family: "Vazirmatn", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Mirror the hero's mint glow onto the reading side. */
+[dir="rtl"] .hero {
+  background:
+    radial-gradient(120% 90% at 22% 12%, rgba(212, 233, 226, 0.85) 0%, rgba(246, 251, 249, 0) 58%),
+    linear-gradient(180deg, var(--mint-050) 0%, var(--white) 82%);
+}
+
+[dir="rtl"] .skip-link { left: auto; right: -9999px; }
+[dir="rtl"] .skip-link:focus { left: auto; right: 0; border-radius: 0 0 0 var(--radius-sm); }
+
+[dir="rtl"] .nav a::after { left: auto; right: 0; }
+
+[dir="rtl"] .service-search { padding: 0.5rem 0.9rem 0.5rem 0.6rem; }
+
+[dir="rtl"] .stage__close { right: auto; inset-inline-end: 1rem; }
+
+[dir="rtl"] .about__visual-glow { right: auto; left: -60px; }
+
+/* Persian script should not be tracked out or tightly kerned. */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] .stat strong,
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .field > span,
+[dir="rtl"] .brand__text span,
+[dir="rtl"] .site-footer__tagline,
+[dir="rtl"] .stage__hint { letter-spacing: normal; }
+
+/* Arrows follow the reading direction. */
+[dir="rtl"] .link-arrow svg,
+[dir="rtl"] .testimonial__nav svg { transform: scaleX(-1); }
+[dir="rtl"] .link-arrow:hover svg { transform: scaleX(-1); }
