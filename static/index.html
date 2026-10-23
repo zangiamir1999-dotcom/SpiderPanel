@@ -1225,6 +1225,163 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   outline-offset: 2px;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+   3D DEPTH LAYER
+   Adds physical depth on top of the existing palette: raised surfaces get a
+   lit top edge and a shaded bottom edge, controls get a real bevel with a
+   press state, fields sink into their surface, and the sidebar / topbar /
+   modals cast their own shadow. Only light and elevation are changed here -
+   no colors, sizes or layout. Both themes keep their look through the
+   tokens below.
+   ══════════════════════════════════════════════════════════════════════════ */
+:root{
+  --d3-face:linear-gradient(180deg,#1b1b22 0%,#0d0d11 55%,#08080a 100%);
+  --d3-hi:rgba(255,255,255,.12);
+  --d3-lo:rgba(0,0,0,.65);
+  --d3-btn-hi:rgba(255,255,255,.12);
+  --d3-btn-lo:rgba(0,0,0,.5);
+  --d3-sh-1:inset 0 1px 0 var(--d3-hi),inset 0 -1px 0 var(--d3-lo),0 1px 2px rgba(0,0,0,.6),0 12px 28px -12px rgba(0,0,0,.85);
+  --d3-sh-2:inset 0 1px 0 var(--d3-hi),inset 0 -1px 0 var(--d3-lo),0 4px 8px -2px rgba(0,0,0,.6),0 26px 52px -18px rgba(0,0,0,.95);
+  --d3-bevel:inset 0 1px 0 var(--d3-btn-hi),inset 0 -2px 0 var(--d3-btn-lo),0 2px 0 rgba(0,0,0,.45),0 6px 14px -8px rgba(0,0,0,.75);
+  --d3-sunk:inset 0 2px 5px rgba(0,0,0,.7),inset 0 -1px 0 rgba(255,255,255,.05),0 1px 0 rgba(255,255,255,.04);
+  --d3-press:inset 0 2px 5px rgba(0,0,0,.55),inset 0 -1px 0 rgba(255,255,255,.04),0 1px 1px rgba(0,0,0,.5);
+  /* Edge, glow and focus ring follow whatever accent the panel is using. */
+  --d3-accent-edge:color-mix(in srgb, var(--neon) 40%, #000000);
+  --d3-accent-glow:color-mix(in srgb, var(--neon) 30%, transparent);
+  --d3-focus:color-mix(in srgb, var(--neon) 22%, transparent);
+}
+[data-theme="light"]{
+  --d3-face:linear-gradient(180deg,#ffffff 0%,#f8f8fb 55%,#f1f1f5 100%);
+  --d3-hi:rgba(255,255,255,.95);
+  --d3-lo:rgba(0,0,0,.08);
+  --d3-btn-hi:rgba(255,255,255,.9);
+  --d3-btn-lo:rgba(0,0,0,.12);
+  --d3-sh-1:inset 0 1px 0 var(--d3-hi),inset 0 -1px 0 var(--d3-lo),0 1px 2px rgba(0,0,0,.1),0 12px 26px -12px rgba(0,0,0,.3);
+  --d3-sh-2:inset 0 1px 0 var(--d3-hi),inset 0 -1px 0 var(--d3-lo),0 3px 6px -2px rgba(0,0,0,.12),0 24px 44px -20px rgba(0,0,0,.34);
+  --d3-bevel:inset 0 1px 0 var(--d3-btn-hi),inset 0 -2px 0 var(--d3-btn-lo),0 2px 0 rgba(0,0,0,.14),0 8px 16px -10px rgba(0,0,0,.32);
+  --d3-sunk:inset 0 2px 4px rgba(0,0,0,.1),inset 0 -1px 0 rgba(255,255,255,.9),0 1px 0 rgba(255,255,255,.9);
+  --d3-press:inset 0 2px 4px rgba(0,0,0,.14),0 1px 1px rgba(0,0,0,.06);
+}
+
+/* 1 - Raised surfaces: lit top edge, shaded bottom edge, shadow underneath. */
+.panel,.stat,.u-card,.tbl,.sidebar,.topbar,.modal-c,.login-card,.toast,
+.bot-acc,.bot-status-card,.bot-plan-card,.sub-card,.ib-pick,.contact-bubble,
+.spd-acc,.scn-item,.bot-join-row{
+  background-image:var(--d3-face)!important;
+  box-shadow:var(--d3-sh-1)!important;
+}
+.panel:hover,.stat:hover,.sub-card:hover,.ib-pick:hover,.bot-plan-card:hover,.contact-bubble:hover{
+  box-shadow:var(--d3-sh-2)!important;
+}
+/* The frame casts a shadow onto the content it holds. */
+.sidebar{box-shadow:inset 1px 0 0 var(--d3-hi),inset 0 -1px 0 var(--d3-lo),-20px 0 46px -20px rgba(0,0,0,.9)!important}
+.topbar{box-shadow:inset 0 1px 0 var(--d3-hi),inset 0 -1px 0 var(--d3-lo),0 12px 28px -16px rgba(0,0,0,.9)!important}
+.modal-c{box-shadow:inset 0 1px 0 var(--d3-hi),inset 0 -1px 0 var(--d3-lo),0 34px 74px -24px rgba(0,0,0,.95),0 0 0 1px rgba(0,0,0,.5)!important}
+.sb-brand img{box-shadow:0 10px 22px -10px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.06)!important}
+
+/* 2 - Controls: bevelled, and a press that pushes them down. */
+.btn,.btn-glass,.lang-btn,.tab,.bot-tab,.cfg-copy-btn,.modal-x,.login-btn,.theme-dot{
+  box-shadow:var(--d3-bevel)!important;
+}
+.btn:hover,.btn-glass:hover,.lang-btn:hover,.tab:hover,.bot-tab:hover,.login-btn:hover{
+  box-shadow:var(--d3-bevel),0 12px 24px -14px rgba(0,0,0,.9)!important;
+}
+.btn:active,.btn-glass:active,.lang-btn:active,.tab:active,.bot-tab:active,.login-btn:active{
+  transform:translateY(2px)!important;
+  box-shadow:var(--d3-press)!important;
+}
+/* Primary button: a solid accent edge under a lit face. */
+.btn-p{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -3px 0 rgba(0,0,0,.22),0 4px 0 var(--d3-accent-edge),0 12px 24px -12px var(--d3-accent-glow)!important;
+}
+.btn-p:hover{
+  transform:translateY(-1px)!important;filter:none!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -3px 0 rgba(0,0,0,.2),0 5px 0 var(--d3-accent-edge),0 16px 30px -14px var(--d3-accent-glow)!important;
+}
+.btn-p:active{
+  transform:translateY(3px)!important;
+  box-shadow:inset 0 2px 4px rgba(0,0,0,.22),inset 0 -2px 0 rgba(0,0,0,.18),0 1px 0 var(--d3-accent-edge),0 4px 10px -6px var(--d3-accent-glow)!important;
+}
+
+/* 3 - Fields, code blocks and switches sink into the surface. */
+.f-g input,.f-g select,.f-g textarea,.input-glass,.cfg-code,.bot-join-row input,
+input[type="text"],input[type="password"],input[type="number"],input[type="search"],textarea,select{
+  box-shadow:var(--d3-sunk)!important;
+}
+input:focus,select:focus,textarea:focus{
+  box-shadow:inset 0 2px 5px rgba(0,0,0,.55),0 0 0 3px var(--d3-focus)!important;
+}
+.ios-switch{box-shadow:var(--d3-sunk)!important}
+.ios-switch::after{box-shadow:0 2px 4px rgba(0,0,0,.45),inset 0 -1px 0 rgba(0,0,0,.08)!important}
+
+/* 4 - Navigation, accordions, pills and meters. */
+.nav-item:hover{
+  box-shadow:inset 0 1px 0 var(--d3-btn-hi),inset 0 -1px 0 var(--d3-btn-lo),0 4px 12px -8px rgba(0,0,0,.8)!important;
+}
+.nav-item.active{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 -3px 6px rgba(0,0,0,.5),0 6px 16px -10px rgba(0,0,0,.9)!important;
+}
+.spd-acc-head,.bot-acc-head,.nav-accordion-head{
+  box-shadow:inset 0 1px 0 var(--d3-btn-hi),inset 0 -1px 0 var(--d3-btn-lo)!important;
+}
+.scn-tabs{box-shadow:var(--d3-sunk)!important}
+.scn-tab{box-shadow:none!important}
+.scn-tab.active{box-shadow:var(--d3-bevel)!important}
+.badge{box-shadow:inset 0 1px 0 rgba(255,255,255,.10),inset 0 -1px 0 rgba(0,0,0,.3)!important}
+.pbar,.srv-bar-bg{box-shadow:inset 0 1px 3px rgba(0,0,0,.7)!important}
+.pbar-f,.srv-bar-f{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 0 8px -2px var(--d3-accent-glow)!important}
+
+/* 5 - Headings lift a hair off their surface. */
+[data-theme="dark"] .stat-v,[data-theme="dark"] .panel-h{
+  text-shadow:0 1px 1px rgba(0,0,0,.85)!important;
+}
+
+/* 6 - With reduced motion the press and lift states apply instantly. */
+@media (prefers-reduced-motion: reduce){
+  .btn,.btn-p,.btn-glass,.lang-btn,.tab,.bot-tab,.scn-tab,.nav-item,.login-btn,.stat,.u-card,.panel{transition:none!important}
+}
+
+/* 7 - Light theme parity. The flat "monochrome" skin restates these surfaces
+   and the primary button under [data-theme="light"] with !important, so the
+   light depth is declared at the same specificity (and later, so it wins). */
+[data-theme="light"] .panel,[data-theme="light"] .stat,[data-theme="light"] .u-card,
+[data-theme="light"] .tbl,[data-theme="light"] .sidebar,[data-theme="light"] .topbar,
+[data-theme="light"] .modal-c,[data-theme="light"] .login-card,[data-theme="light"] .toast,
+[data-theme="light"] .bot-acc,[data-theme="light"] .bot-status-card,[data-theme="light"] .bot-plan-card,
+[data-theme="light"] .sub-card,[data-theme="light"] .ib-pick,[data-theme="light"] .contact-bubble,
+[data-theme="light"] .spd-acc,[data-theme="light"] .scn-item,[data-theme="light"] .bot-join-row{
+  background-image:var(--d3-face)!important;
+  box-shadow:var(--d3-sh-1)!important;
+}
+[data-theme="light"] .panel:hover,[data-theme="light"] .stat:hover,[data-theme="light"] .sub-card:hover,
+[data-theme="light"] .ib-pick:hover,[data-theme="light"] .bot-plan-card:hover,[data-theme="light"] .contact-bubble:hover{
+  box-shadow:var(--d3-sh-2)!important;
+}
+[data-theme="light"] .sidebar{box-shadow:inset 1px 0 0 var(--d3-hi),inset 0 -1px 0 var(--d3-lo),-20px 0 46px -20px rgba(0,0,0,.18)!important}
+[data-theme="light"] .topbar{box-shadow:inset 0 1px 0 var(--d3-hi),inset 0 -1px 0 var(--d3-lo),0 12px 28px -16px rgba(0,0,0,.18)!important}
+[data-theme="light"] .modal-c{box-shadow:inset 0 1px 0 var(--d3-hi),inset 0 -1px 0 var(--d3-lo),0 34px 74px -24px rgba(0,0,0,.3)!important}
+[data-theme="light"] .btn-p{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -3px 0 rgba(0,0,0,.35),0 4px 0 var(--d3-accent-edge),0 14px 26px -14px var(--d3-accent-glow)!important}
+
+/* 8 - The Inbounds screens and the user-card actions neutralise their own
+   buttons with !important; same flat colours, depth put back. */
+#tab-inbounds .btn,#tab-inbounds .btn-p,#tab-inbounds .btn-b,#tab-inbounds .btn-r,
+#tab-inbounds .btn-gr,#tab-inbounds .btn-glass,
+#mod-inbound .btn,#mod-inbound .btn-p,#mod-inbound .btn-b,#mod-inbound .btn-r,
+#mod-inbound .btn-gr,#mod-inbound .btn-glass,
+.user-action-btns .btn,.user-action-btns .btn-g{
+  box-shadow:var(--d3-bevel)!important;
+}
+#tab-inbounds .btn:hover,#tab-inbounds .btn-p:hover,#tab-inbounds .btn-g:hover,#tab-inbounds .btn-glass:hover,
+#mod-inbound .btn:hover,#mod-inbound .btn-p:hover,#mod-inbound .btn-g:hover,#mod-inbound .btn-glass:hover,
+.user-action-btns .btn:hover,.user-action-btns .btn-g:hover{
+  box-shadow:var(--d3-bevel),0 12px 24px -14px rgba(0,0,0,.75)!important;
+}
+#tab-inbounds .btn:active,#tab-inbounds .btn-p:active,#tab-inbounds .btn-g:active,#tab-inbounds .btn-glass:active,
+#mod-inbound .btn:active,#mod-inbound .btn-p:active,#mod-inbound .btn-g:active,#mod-inbound .btn-glass:active{
+  transform:translateY(2px)!important;
+  box-shadow:var(--d3-press)!important;
+}
+
 </style>
 </head>
 <body>
