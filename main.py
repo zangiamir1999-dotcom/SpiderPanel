@@ -6061,6 +6061,9 @@ _os.makedirs(_STATIC_DIR, exist_ok=True)
 # the panel music + background images 404'd.
 app.mount("/static", StaticFiles(directory=_STATIC_DIR), name="static")
 
+# Static marketing site (Cleargrin dental clinic demo) served at /site.
+app.mount("/site", StaticFiles(directory=_os.path.join(_STATIC_DIR, "site"), html=True), name="site")
+
 @app.get("/login", response_class=HTMLResponse)
 async def login_page(request: Request):
     if await is_valid_session(request.cookies.get(SESSION_COOKIE)):
